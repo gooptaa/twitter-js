@@ -4,8 +4,19 @@ const chalk = require( 'chalk' );
 const volleyball = require( 'volleyball' );
 const nunjucks = require("nunjucks")
 
-nunjucks.configure('views', { autoescape: true, express: app });
-nunjucks.render('index.html', { foo: 'bar' });
+var locals = {
+    title: 'TwitterApp',
+    people: [
+        { name: 'Tina'},
+        { name: 'Christopher' },
+        { name: 'Hermione'}
+    ]
+};
+
+app.set('view engine', 'html'); // have res.render work with html files
+app.engine('html', nunjucks.render); // when giving html files to res.render, tell it to use nunjucks
+
+nunjucks.configure('views', {noCache: true});
 
 app.listen(3000, function() {
   console.log(chalk.bgGreen("Hi, I'm listening!"));
@@ -22,10 +33,16 @@ app.use('/special', function(request, response) {
 })
 
 app.get('/home', function(request, response) {
-  response.send("This is the home page.");
+  response.render('index', locals, function(err, html){
+    if (err) throw err;
+    response.send(html)
+  });
 })
 
 app.get('/news', function(request, response) {
-  response.send("Here's the news, you're lost! :[");
+  response.render("index", locals, function(err, html){
+    if (err) throw err;
+    response.send(html)
+  })
 })
 
