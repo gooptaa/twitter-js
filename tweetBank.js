@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-var data = []
+var data = [];
 
 function add (name, content) {
   var id = data.length
@@ -21,17 +21,9 @@ module.exports = {
   find: find
 };
 
-
-// console.log(list());
-// console.log(find.call(data, function(user) {
-//   // console.log(data);
-//   return user.name[0] === "N";
-//   // return this.name.slice(0,5) === 'Nimit';
-// }))
 const randArrayEl = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
-
 
 const getFakeName = function() {
   const fakeFirsts = ['Nimit', 'David', 'Shanna', 'Emily', 'Scott', 'Karen', 'Ben', 'Dan', 'Ashi', 'Kate'];
