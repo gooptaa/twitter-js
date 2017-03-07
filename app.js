@@ -5,7 +5,6 @@ const volleyball = require( 'volleyball' );
 const nunjucks = require("nunjucks");
 const routes = require("./routes");
 
-
 var locals = {
     title: 'TwitterApp',
     people: [
