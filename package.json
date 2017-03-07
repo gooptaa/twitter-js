@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tinaonthelam/twitter-js/issues"
   },
-  "homepage": "https://github.com/tinaonthelam/twitter-js#readme"
+  "homepage": "https://github.com/tinaonthelam/twitter-js#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
