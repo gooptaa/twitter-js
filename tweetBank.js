@@ -3,7 +3,8 @@ const _ = require('lodash');
 var data = []
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  var id = data.length
+  data.push({ name: name, content: content, id: id });
 }
 
 function list () {
@@ -31,10 +32,15 @@ const randArrayEl = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
+
 const getFakeName = function() {
-  const fakeFirsts = ['Nimit', 'David', 'Shanna', 'Emily', 'Scott', 'Karen', 'Ben', 'Dan', 'Ashi', 'Kate', 'Omri', 'Gabriel', 'Joe', 'Geoff'];
+  const fakeFirsts = ['Nimit', 'David', 'Shanna', 'Emily', 'Scott', 'Karen', 'Ben', 'Dan', 'Ashi', 'Kate'];
   const fakeLasts = ['Hashington', 'Stackson', 'McQueue', 'OLogn', 'Ternary', 'Claujure', 'Dunderproto', 'Binder', 'Docsreader', 'Ecma'];
-  return randArrayEl(fakeFirsts) + " " + randArrayEl(fakeLasts);
+  const names = []
+  for (var i = 0; i < fakeFirsts.length; i++){
+    names.push(fakeFirsts[i] + " " + fakeLasts[i])
+  }
+  return randArrayEl(names);
 };
 
 const getFakeTweet = function() {
@@ -43,5 +49,13 @@ const getFakeTweet = function() {
 };
 
 for (let i = 0; i < 10; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+  module.exports.add( "Nimit", getFakeTweet() );
+}
+
+for (let i = 0; i < 10; i++) {
+  module.exports.add( "Tina", getFakeTweet() );
+}
+
+for (let i = 0; i < 10; i++) {
+  module.exports.add( "Christopher", getFakeTweet() );
 }
