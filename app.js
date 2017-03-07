@@ -4,6 +4,7 @@ const chalk = require( 'chalk' );
 const volleyball = require( 'volleyball' );
 const nunjucks = require("nunjucks")
 
+
 var locals = {
     title: 'TwitterApp',
     people: [
