@@ -25,3 +25,4 @@ app.listen(3000, function() {
 
 app.use(volleyball);
 app.use('/', routes);
+app.use(express.static('public'))

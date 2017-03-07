@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // could use one line instead: const router = require('express').Router();
 const tweetBank = require('../tweetBank');
-const path = require( 'path' ); 
+const path = require( 'path' );
 
 router.get('/', function (req, res) {
   let tweets = tweetBank.list();
@@ -11,9 +11,10 @@ router.get('/', function (req, res) {
 
 module.exports = router;
 
-router.get('/stylesheets/style.css', function(request, response) {
-  response.sendFile('style.css', { root: path.join(__dirname, '../public/stylesheets') })
- });
+
+// router.get('/stylesheets/style.css', function(request, response) {
+//   response.sendFile('style.css', { root: path.join(__dirname, '../public/stylesheets') })
+//  });
 
 // app.get('/home', function(request, response) {
 //   response.render('index', locals, function(err, html){
