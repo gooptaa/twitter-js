@@ -2,9 +2,13 @@ const express = require( 'express' );
 const app = express();
 const chalk = require( 'chalk' );
 const volleyball = require( 'volleyball' );
+const nunjucks = require("nunjucks")
+
+nunjucks.configure('views', { autoescape: true, express: app });
+nunjucks.render('index.html', { foo: 'bar' });
 
 app.listen(3000, function() {
-  console.log(chalk.bgYellow("Hi, I'm listening!"));
+  console.log(chalk.bgGreen("Hi, I'm listening!"));
 })
 
 // app.use(function (request, response, next) {
@@ -24,3 +28,4 @@ app.get('/home', function(request, response) {
 app.get('/news', function(request, response) {
   response.send("Here's the news, you're lost! :[");
 })
+
