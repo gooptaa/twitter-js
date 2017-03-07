@@ -19,3 +19,11 @@ module.exports = {
   list: list,
   find: find
 };
+
+
+// console.log(list());
+// console.log(find.call(data, function(user) {
+//   // console.log(data);
+//   return user.name[0] === "N";
+//   // return this.name.slice(0,5) === 'Nimit';
+// }))
