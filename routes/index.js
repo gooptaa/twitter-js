@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/tweets', function(req, res) {
-  console.log(req); 
+  console.log(req);
   var name = req.body.name;
   var text = req.body.text;
   tweetBank.add(name, text);
